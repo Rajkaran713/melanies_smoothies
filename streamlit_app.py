@@ -9,7 +9,7 @@ st.text(smoothiefroot_response)
 # Write directly to the app
 st.title(":lollipop: Customize Your Smoothie :lollipop:")
 st.write(
-    """Choose your fruits you want in your custom smoothie.
+    """Choose your fruits you want in your custom smoothie!!
     """)
 
 name_on_order = st.text_input("Name on Smoothie:")
@@ -18,7 +18,7 @@ cnx = st. connection ("snowflake")
 session = cnx.session()
 my_dataframe = session. table ("smoothies.public.fruit_options").select (col ('FRUIT_NAME'))
 #my_dataframe = session.table("smoothies.public.orders").filter(col("ORDER_FILLED")==0).collect()
-#st. dataframe(data-my_dataframe, use_container_width)
+#st. dataframe(data-my_dataframe, use_container_width=True)
 
 # Convert the Snowpark Dataframe to a Pandas Dataframe so we
 can use the LOC function
